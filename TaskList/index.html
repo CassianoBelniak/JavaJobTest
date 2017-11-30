@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TaskList</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS styleSheet-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--Javascript file-->
+    <script src="javascript.js"></script>
+  </head>
+  <body>
+    <div class="topBar">
+      TaskList
+    </div>
+
+    <div id="newTaskBigContainer">
+      <div id="newTaskButton" onclick="toogleNewTask()">
+        Nova tarefa
+      </div>
+      <div id="newTaskContainer">
+        <input type="text" name="" value="" id="titleNewTask" placeholder="Título">
+        <textarea name="name" id="descriptionNewTask" placeholder="Descrição"></textarea>
+        <div id="confirmNewTask" onclick="addTask()">
+          Salvar tarefa
+        </div>
+      </div>
+    </div>
+    <br><br>
+
+    <div id="taskList">
+
+    </div>
+    <div id="completeTaskList">
+
+    </div>
+
+
+  </body>
+</html>

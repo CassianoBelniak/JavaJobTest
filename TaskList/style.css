@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+/*
+theme:
+default green: #43a047
+dark green: #1b5e20
+light green: #81c784
+text: #37474f
+light text: white
+
+*/
+
+
+body{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  color: #37474f;
+  font-family: 'Nunito', sans-serif;
+}
+
+.topBar{
+  width: 100%;
+  height: 40px;
+  background-color: #43a047;
+  color: white;
+  font-weight: bolder;
+  line-height: 40px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+#newTaskButton{
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  color: white;
+  width: 100%;
+  min-height: 25px;
+  background-color: #43a047;
+  position: absolute;
+  transition:all .1s ease;
+}
+
+#newTaskButton:hover{
+  background-color: #81c784;
+}
+
+#newTaskBigContainer{
+  text-align: center;
+  width: 95px;
+  position: absolute;
+  right: 30px;
+  margin: 10px;
+  background-color: #43a047;
+  transition:all .3s ease;
+  z-index: 1;
+}
+
+#newTaskBigContainer.expand{
+  width: 400px;
+  min-height: 315px;
+}
+
+#newTaskContainer{
+  width: 100%;
+  height: 90%;
+}
+
+#titleNewTask{
+  width: 90%;
+  margin: 5px;
+  height: 40px;
+  border: 0;
+  top: 30px;
+  position: relative;
+  padding: 5px;
+}
+
+#descriptionNewTask{
+  width: 90%;
+  min-height: 170px;
+  max-width: 90%;
+  margin: 5px;
+  border: 0;
+  top: 25px;
+  position: relative;
+  font-family: 'Nunito', sans-serif;
+  padding: 5px;
+  resize: none;
+}
+
+#confirmNewTask{
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  color: #37474f;
+  width: 100px;;
+  min-height: 25px;
+  background-color: white;
+  position: absolute;
+  transition:all .1s ease;
+  bottom: 10px;
+  right: 20px;
+}
+
+#confirmNewTask:hover{
+  background-color: #AAA;
+}
+
+.taskDiv{
+  width: 200px;
+  min-height: 200px;
+  background-color: #43a047;
+  margin: 20px;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.taskTitle{
+  width: 100%;
+  min-height: 30px;
+  border-bottom: solid 1px #1b5e20;
+  font-weight: bolder;
+  word-wrap: break-word;
+}
+
+.taskContent{
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.taskDoneDiv{
+  width: 200px;
+  min-height: 200px;
+  background-color: #757575;
+  margin: 20px;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.icon{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.deleteIcon{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  cursor: pointer;
+}

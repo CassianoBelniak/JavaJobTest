@@ -1,0 +1,43 @@
+--Buscar os nomes de todos os alunos que frequentam alguma turma do professor 'JOAO PEDRO'.
+SELECT Nome
+FROM aluno, turma, professor
+WHERE aluno.id = turma.aluno_id AND professor.id = turma.professor_id AND professor.nome =  'JOAO PEDRO';
+
+
+--Buscar os dias da semana que tenham aulas da disciplina 'MATEMATICA'
+SELECT DISTINCT dia_da_semana
+FROM turma, disciplina
+WHERE turma.disciplina_id = disciplina.id AND disciplina.nome = 'MATEMATICA';
+
+
+--Buscar todos os alunos que frequentem aulas de 'MATEMATICA' e também 'FISICA'.
+SELECT al.nome
+FROM (((aluno
+      INNER JOIN turma ON aluno.id = turma.aluno_id)
+      INNER JOIN disciplina ON disciplina.id = turma.disciplina_id AND disciplina.nome = 'MATEMATICA') AS t1
+      INNER JOIN ((aluno
+                   INNER JOIN turma ON aluno.id = turma.aluno_id)
+      			   INNER JOIN disciplina ON disciplina.id = turma.disciplina_id AND disciplina.nome = 'FISICA') AS t2
+     			   ON t1.aluno_id = t2.aluno_id),aluno as al
+WHERE t1.aluno_id = al.id
+GROUP BY al.nome;
+
+
+--Buscar as disciplinas que não tenham nenhuma turma.
+SELECT nome
+FROM disciplina
+EXCEPT
+SELECT disciplina.nome
+FROM turma, disciplina
+WHERE turma.disciplina_id = disciplina.id
+
+
+--Buscar os alunos que frequentem aulas de 'MATEMATICA' exceto os que frequentem 'QUIMICA'.
+SELECT aluno.nome
+FROM aluno, turma, disciplina
+WHERE aluno.id = turma.aluno_id AND disciplina.id = turma.disciplina_id AND disciplina.nome = 'matematica'
+GROUP BY aluno.nome
+EXCEPT
+SELECT aluno.nome
+FROM aluno, turma, disciplina
+WHERE aluno.id = turma.aluno_id AND disciplina.id = turma.disciplina_id AND disciplina.nome = 'quimica'
